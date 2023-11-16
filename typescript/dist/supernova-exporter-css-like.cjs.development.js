@@ -3,6 +3,7 @@
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var shortenCssHex = _interopDefault(require('shorten-css-hex'));
+var hexToRgba = _interopDefault(require('hex-to-rgba'));
 
 function _unsupportedIterableToArray(o, minLen) {
   if (!o) return;
@@ -48,6 +49,13 @@ function shortenHex(hexValue) {
 }
 
 Pulsar.registerFunction("shortenHex", shortenHex);
+
+function toRgba(hexValue) {
+  var convertedHex = hexToRgba('#' + hexValue);
+  return convertedHex;
+}
+
+Pulsar.registerFunction("toRgba", toRgba);
 /**
  * Convert group name, token name and possible prefix into camelCased string, joining everything together
  */
@@ -57,8 +65,10 @@ Pulsar.registerFunction("readableVariableName", function (token, tokenGroup) {
   segments.push(tokenGroup.name);
   segments.push(token.name);
   var tokenName = segments.join("-");
-  tokenName = tokenName.replace(/[^a-zA-Z0-9_-]/g, '');
-  return tokenName.toLowerCase();
+  tokenName = tokenName.replace('+', '');
+  tokenName = tokenName.replace(/[^a-zA-Z0-9_-]/g, '-');
+  tokenName = tokenName.replace('Dimension-', '');
+  return tokenName;
 });
 
 function findAliases(token, allTokens) {
@@ -149,4 +159,22 @@ function getFormattedRGB(colorValue) {
     return "rgba(" + colorValue.r + "," + colorValue.g + "," + colorValue.b + "," + opacity + ")";
   }
 }
+
+function compare(a, b) {
+  if (a.name < b.name) {
+    return -1;
+  }
+
+  if (a.name > b.name) {
+    return 1;
+  }
+
+  return 0;
+}
+
+function sortTokens(tokens) {
+  return tokens.sort(compare);
+}
+
+Pulsar.registerFunction("sortTokens", sortTokens);
 //# sourceMappingURL=supernova-exporter-css-like.cjs.development.js.map
