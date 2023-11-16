@@ -29,6 +29,7 @@ Pulsar.registerFunction("toRgba", toRgba);
 
     tokenName = tokenName.replace('+', '');
     tokenName = tokenName.replace(/[^a-zA-Z0-9_-]/g, '-');
+    tokenName = tokenName.replace('Dimension-', '');
 
     return tokenName.toLowerCase();
   }
@@ -133,3 +134,19 @@ function getFormattedRGB(colorValue) {
     return `rgba(${colorValue.r},${colorValue.g},${colorValue.b},${opacity})`
   } 
 }
+
+function compare(a, b) {
+  if ( a.name < b.name ){
+    return -1;
+  }
+  if ( a.name > b.name ){
+    return 1;
+  }
+  return 0;
+}
+
+function sortTokens(tokens) {
+  return tokens.sort(compare);
+}
+
+Pulsar.registerFunction("sortTokens", sortTokens);
