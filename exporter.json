@@ -1,12 +1,13 @@
 {
     "id": "cbs.exporter-scss",
-    "name": "SCSS Exporter for Bison/Fly",
+    "name": "[PLATFORM] Exporter",
     "description": "Export your design system data into SCSS",
     "author": "Andrew Still",
     "organization": "CBS Sports",
+    "homepage": "[COMPANY_WEBSITE or delete]",
     "version": "1.0.0",
-    "usesBrands": false,
-    "usesThemes": false,
+    "usesBrands": true,
+    "usesThemes": true,
     "executable": "/dist/build.js",
     "engine": "latest",
     "tags": [
