@@ -1,0 +1,8 @@
+{
+    "blueprints": [
+        {
+            "invoke": "all.pr",
+            "write_to": "_variables.scss"
+        }
+    ]
+}
