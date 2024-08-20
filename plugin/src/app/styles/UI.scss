@@ -1,0 +1,308 @@
+// @collapse
+@import './Variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Recursive:wght@300..1000&display=swap');
+
+@mixin body {
+  background-color: theme-color($light-theme, surfaces, primary);
+  display: flex;
+  padding: map-get($spacing, 0);
+  align-items: flex-start;
+  gap: map-get($spacing, 0);
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+}
+button, a, .clickable {
+  cursor: pointer;
+}
+#react-page {
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+body {
+  @include body;
+}
+
+h2{
+  margin: 0;
+}
+p {
+  margin: 0;
+  // font-weight: 500;
+  font-family: 'Inter';
+  font-size: 12px;
+}
+.authenticationContainer {
+  @include body;
+}
+
+@mixin nav_panel {
+  display: flex;
+  // width: 120px;
+  // height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+  align-self: stretch;
+  border-right: 1px solid theme-color($light-theme, utility, border_primary);
+  background: theme-color($light-theme, surfaces, primary);
+}
+
+.nav_panel {
+  @include nav_panel;
+}
+
+@mixin nav_top {
+  display: flex;
+  padding: map-get($spacing, 0);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: map-get($spacing, 100);
+  flex: 1 0 0;
+  align-self: stretch;
+}
+.nav_top {
+  @include nav_top;
+}
+
+@mixin title {
+  display: flex;
+  padding: map-get($spacing, 100) map-get($spacing, 75) ;
+  justify-content: space-between;
+  gap: map-get($spacing, 100);
+  align-items: center;
+  align-self: stretch;
+  border-bottom: 1px solid theme-color($light-theme, utility, border_primary);
+  font-size: 14px;
+}
+
+.title {
+  @include title;
+}
+@mixin icon_panel_open {
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: 38px;
+  border-radius: map-get($radius, 2);
+  border: none;
+  background-color: theme-color($light-theme, surfaces, primary);
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover{
+    background-color: theme-color($light-theme, surfaces, tertiary);
+  }
+}
+.icon_panel_open {
+  @include icon_panel_open;
+}
+
+@mixin icon_panel_close {
+  display: flex;
+  padding: map-get($spacing, 50);
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: 38px;
+  border-radius: map-get($radius, 2);
+  border: 1px solid theme-color($light-theme, utility, border_primary);
+  background-color: theme-color($light-theme, surfaces, secondary);
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover{
+    background-color: theme-color($light-theme, surfaces, tertiary);
+  }
+}
+.icon_panel_close {
+  @include icon_panel_close;
+}
+
+.icon_panel_open:hover, .icon_panel_close:hover{
+  cursor:pointer;
+}
+@mixin menu_items {
+  display: flex;
+  padding: map-get($spacing, 0) map-get($spacing, 75);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: map-get($spacing, 25);
+  flex: 1 0 0;
+  align-self: stretch;
+}
+.menu_items {
+  @include menu_items;
+}
+@mixin menu_item {
+  display: flex;
+  align-self: stretch;
+  padding: map-get($spacing, 25) map-get($spacing, 0) map-get($spacing, 25) map-get($spacing, 50);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: map-get($spacing, 0);
+  color: theme-color($light-theme, text, secondary);
+  font-family: 'Inter';
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 150%;
+
+  &:hover{
+    cursor: pointer;
+    border-radius: map-get($radius, 4);
+    background-color: theme-color($light-theme, surfaces, secondary);
+  }
+}
+
+.menu_item {
+  @include menu_item;
+}
+
+
+
+@mixin activeNav {
+  display: flex;
+  align-self: stretch;
+  padding: map-get($spacing, 25) map-get($spacing, 0) map-get($spacing, 25) map-get($spacing, 50);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: map-get($spacing, 0);
+  border-radius: map-get($radius, 4);
+  background: theme-color($light-theme, surfaces, secondary);
+  font-weight: 500;
+  line-height: 150%;
+  color: theme-color($light-theme, text, primary);
+
+}
+
+.activeNav {
+  @include activeNav;
+}
+
+@mixin about_container {
+  display: flex;
+  padding: map-get($spacing, 0);
+  align-items: center;
+  gap: map-get($spacing, 50);
+  align-self: stretch;
+  font-size: 12px;
+  font-weight: 500;
+  color: theme-color($light-theme, text, secondary);
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.about_container {
+  @include about_container;
+}
+@mixin about_icon{
+  fill: theme-color($light-theme, utility, icon_primary);
+}
+
+.centerIcons{
+  margin: auto;
+}
+
+@mixin rightBody {
+  width: 370px;
+  display: flex;
+  padding: map-get($spacing, 0);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: map-get($spacing, 0);
+  flex: 1 0 0;
+  align-self: stretch;
+  // height: 100%;
+}
+
+.rightBody {
+  @include rightBody;
+}
+
+@mixin refreshContainer{
+  cursor: pointer;
+}
+.refreshContainer{
+  @include refreshContainer;
+}
+
+
+@mixin infoBody{
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  justify-content: space-between;
+  // height: 100vh;
+  gap: map-get($spacing, 100);
+  padding: map-get($spacing, 100);
+  font-family: 'Inter';
+  overflow-y: scroll;
+
+  h2{
+    color: #181b29;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: -0.4px;
+    margin: 0;
+  }
+
+  h3{
+    color: #181b29;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: -0.4px;
+    margin: 0;
+  }
+
+  ul{
+    padding-left: map-get($spacing, 200);
+  }
+  li{
+    line-height: 125%;
+    font-size: 14px;
+    margin-top: map-get($spacing, 75);
+
+  
+  }
+}
+
+.infoBody{
+  @include infoBody;
+}
+
+@mixin code{
+  display: inline-block;
+  font-family: 'Recursive';
+  background-color: theme-color($light-theme, surfaces, secondary);
+  padding: map-get($spacing, 25);
+  color: theme-color($light-theme, text, alert);
+  border-radius: map-get($radius, 4);
+  font-size: 12px;
+  border: 1px solid theme-color($light-theme, utility, border_primary);
+
+}
+
+.code{
+  @include code;
+}
+
+@mixin bottomNav{
+  display: flex;
+    flex-direction: column;
+    gap: map-get($spacing, 100);
+    align-self: stretch;
+    padding: map-get($spacing, 0) map-get($spacing, 100) map-get($spacing, 100)map-get($spacing, 100);
+
+}
+.bottomNav{
+  @include bottomNav();
+}
