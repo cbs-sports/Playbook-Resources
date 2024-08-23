@@ -1,0 +1,15 @@
+{
+    "id": "CBS.exporter-Tailwind",
+    "name": "Tailwind Exporter",
+    "description": "Translates DS data to Tailwind",
+    "author": "Playbook",
+    "organization": "Paramount",
+    "version": "1.0.0",
+    "usesBrands": true,
+    "usesThemes": true,
+    "executable": "/dist/build.js",
+    "engine": "latest",
+    "tags": [
+        "[Tailwind, Squilp]"
+    ]
+}

@@ -1,15 +1,15 @@
 {
     "id": "cbs.exporter-ott",
-    "name": "OTT Exporter",
-    "description": "Token Exporter for Roku, tvOS, FireTV and React",
-    "author": "Andrew Still",
-    "organization": "CBS",
+    "name": "Playbook OTT Exporter",
+    "description": "Translates DS data for Roku, tvOS, FireTV and React",
+    "author": "Playbook Design System",
+    "organization": "Paramount",
     "version": "1.0.0",
     "usesBrands": true,
     "usesThemes": true,
     "executable": "/dist/build.js",
     "engine": "latest",
     "tags": [
-        "[ANYTHING_YOU_WANT, like 'Tokens', 'Assets' etc.]"
+        "[Roku, tvOS, FireTV, React, Squilp]"
     ]
 }
