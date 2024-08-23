@@ -7,4 +7,5 @@ Resources include:
     - Auth Ex (Tailwind)
     - OTT (FireTV, tvOS, CTV, Roku)
     - Web (SCSS)
+    - Fantasy (Typescript)
 - Playbook Helper Plugin for Figma
