@@ -2,7 +2,7 @@
     "id": "cbs.exporter-scss",
     "name": "Playbook SCSS Exporter",
     "description": "Translates DS data to SCSS",
-    "author": "Playbook Design System",
+    "author": "Playbook",
     "organization": "Paramount",
     "version": "1.0.0",
     "usesBrands": false,
