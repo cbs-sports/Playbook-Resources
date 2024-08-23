@@ -1,0 +1,16 @@
+{
+    "id": "cbs.fantasy.exporter-ts",
+    "name": "CBS Fantasy Web Exporter",
+    "description": "Export your design system data into TS Variables",
+    "author": "Andrew Still",
+    "organization": "CBS Fantasy",
+    "homepage": "[COMPANY_WEBSITE or delete]",
+    "version": "1.0.0",
+    "usesBrands": false,
+    "usesThemes": true,
+    "executable": "/dist/build.js",
+    "engine": "latest",
+    "tags": [
+        "[ANYTHING_YOU_WANT, like 'Tokens', 'Assets' etc.]"
+    ]
+}
